@@ -9,7 +9,7 @@ KoaJS Validate JSON-API Request Headers Middleware
 
 ## Overview
 
-KoaJS middleware to validate required Request headers for [http://jsonapi.org/format/](JSON API) spec.
+KoaJS middleware to validate required Request headers for [JSON API](http://jsonapi.org/format/) spec.
 
     Content-type: application/vnd.api+json
 
@@ -37,7 +37,7 @@ This middleware will throw a nested object in the application error like so:
 
 It's designed this way so that the application logging will log the entire JSON response and then rethrow the JSON error message.
 
-Therefore you need to use some application logging like [https://github.com/rudijs/koa-json-logger](koa-json-logger) or catch and rethrow the error yourself.
+Therefore you need to use some application logging like [koa-json-logger](https://github.com/rudijs/koa-json-logger) or catch and rethrow the error yourself.
 
 Here's an example using koa-json-logger:
 
