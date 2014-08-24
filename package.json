@@ -1,0 +1,36 @@
+{
+  "name": "koa-jsonapi-headers",
+  "version": "0.0.1",
+  "description": "KoaJS HTTP JSON API Headers Validation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rudijs/koa-jsonapi-headers.git"
+  },
+  "main": "./lib/koa-jsonapi-headers.js",
+  "scripts": {
+    "test": "NODE_ENV=test node --harmony node_modules/istanbul-harmony/lib/cli.js cover node_modules/mocha/bin/_mocha --root lib/ --dir test/coverage  -- -u exports -R spec",
+    "coveralls": "NODE_ENV=test node --harmony node_modules/istanbul-harmony/lib/cli.js cover node_modules/mocha/bin/_mocha --root lib/ --dir test/coverage  -- -u exports -R spec && cat ./test/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "keywords": [
+    "koa",
+    "koajs",
+    "jsonapi"
+  ],
+  "author": {
+    "name": "Rudi Starcevic",
+    "email": "ooly.me@gmail.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.11.13"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "coveralls": "^2.11.1",
+    "istanbul-harmony": "^0.3.0",
+    "jshint": "^2.5.4",
+    "koa": "^0.10.0",
+    "mocha": "^1.21.4",
+    "supertest": "^0.13.0"
+  }
+}
