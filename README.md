@@ -1,6 +1,12 @@
 koa-jsonapi-headers
 ===================
 
+KoaJS Validate JSON-API Request Headers Middleware
+
+[![Build Status](https://travis-ci.org/rudijs/koa-jsonapi-headers.svg?branch=master)](https://travis-ci.org/rudijs/koa-jsonapi-headers)  
+[![Coverage Status](https://coveralls.io/repos/rudijs/koa-jsonapi-headers/badge.png?branch=master)](https://coveralls.io/r/rudijs/koa-jsonapi-headers?branch=master)  
+[![NPM version](https://badge.fury.io/js/koa-jsonapi-headers.svg)](http://badge.fury.io/js/koa-jsonapi-headers)  
+
 ## Overview
 
 KoaJS middleware to validate required Request headers for [http://jsonapi.org/format/](JSON API) spec.
