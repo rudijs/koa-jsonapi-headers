@@ -82,7 +82,7 @@ If the URL query string key 'jsonapiexclude' exists (any value) the JSON API hea
 
 Example:
 
-    app.use(koaJsonApiHeaders({whiteList: [
+    app.use(koaJsonApiHeaders({excludeList: [
         'signin\/google',
         'auth\/google\\?code'
     ]}));
