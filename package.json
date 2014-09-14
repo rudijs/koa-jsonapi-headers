@@ -1,6 +1,6 @@
 {
   "name": "koa-jsonapi-headers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "KoaJS Validate JSON-API Request Headers Middleware",
   "repository": {
     "type": "git",
