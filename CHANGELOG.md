@@ -1,6 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.4 - 2014-09-14
+
+### Added
+- Nothing.
+
+### Deprecated
+- Nothing.
+
+### Removed
+- Nothing.
+
+### Fixed
+- Readme usage errors.
+
 ## 0.0.3 - 2014-09-14
 
 ### Added
