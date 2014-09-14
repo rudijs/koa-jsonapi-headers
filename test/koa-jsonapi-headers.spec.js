@@ -128,7 +128,7 @@ describe('JSON API Headers Middleware', function () {
       });
 
       request(app.listen())
-        .get('/?jsonapi=false')
+        .get('/?jsonapiexclude=true')
         .expect(200)
         .end(function (err, res) {
           if (err) {

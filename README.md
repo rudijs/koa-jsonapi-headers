@@ -66,7 +66,9 @@ Here's an example of manual catch and re-throw:
 
     app.use(koaJsonApiHeaders());
 
-If you have an API endpoint you wish to not use JSON API headers for you can add jsonapi=false to the URL query string.
+If you have an API endpoint you wish to not use JSON API headers for you can add jsonapiexclude=true to the URL query string.
+
+If the URL query string key 'jsonapiexclude' exists (any value) the JSON API headers validation will be skipped.
 
 ## Tests with code coverage report in `test/coverage`
 
