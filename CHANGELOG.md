@@ -1,6 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.3 - 2014-09-14
+
+### Added
+- Add URL regular expression exclude list option
+- Readme updates.
+- Dev dependency updates
+
+### Deprecated
+- Nothing.
+
+### Removed
+- Nothing.
+
+### Fixed
+- Nothing.
+
 ## 0.0.2 - 2014-09-14
 
 ### Added

@@ -66,9 +66,31 @@ Here's an example of manual catch and re-throw:
 
     app.use(koaJsonApiHeaders());
 
-If you have an API endpoint you wish to not use JSON API headers for you can add jsonapiexclude=true to the URL query string.
+*Exclude List*
+
+If you have an API endpoint that you do not want to enforce JSON API headers you can exclude it from the header validations.
+
+There are two methods for excluding:
+
+- Add jsonapiexclude=true to the URL query string.
+
+Example: http://localhost:3000/signin/google?jsonapiexclude=true
 
 If the URL query string key 'jsonapiexclude' exists (any value) the JSON API headers validation will be skipped.
+
+- Pass in an exclude list of URL regular expression patterns when you use `app.use()'
+
+Example:
+
+    app.use(koaJsonApiHeaders({whiteList: [
+        'signin\/google',
+        'auth\/google\\?code'
+    ]}));
+
+*Note:
+
+- No start or end '/'
+- The escaping of the '/' and the double escaping of the '?' as these are regular expression characters.
 
 ## Tests with code coverage report in `test/coverage`
 

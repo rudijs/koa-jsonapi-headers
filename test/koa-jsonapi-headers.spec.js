@@ -117,7 +117,7 @@ describe('JSON API Headers Middleware', function () {
 
     });
 
-    it('should permit exclusions', function (done) {
+    it('should permit exclusions via URL query', function (done) {
 
       app.use(koaJsonApiHeaders());
 
@@ -129,6 +129,33 @@ describe('JSON API Headers Middleware', function () {
 
       request(app.listen())
         .get('/?jsonapiexclude=true')
+        .expect(200)
+        .end(function (err, res) {
+          if (err) {
+            should.not.exist(err);
+            return done(err);
+          }
+          res.text.should.equal('Excluded headers request OK');
+          done();
+        });
+
+    });
+
+    it('should permit exclusions via regex list', function (done) {
+
+      app.use(koaJsonApiHeaders({excludeList: [
+        'resource\/path',
+        'excluded\/endpoint\\?id'
+      ]}));
+
+      // default route
+      app.use(function *route1(next) {
+        this.body = 'Excluded headers request OK';
+        yield next;
+      });
+
+      request(app.listen())
+        .get('/excluded/endpoint?id=1')
         .expect(200)
         .end(function (err, res) {
           if (err) {
