@@ -15,7 +15,16 @@ KoaJS middleware to validate required Request headers for [JSON API](http://json
 
     Accept: application/vnd.api+json
 
-Validation failure will return HTTP `400 Bad Request`
+Validation failure will return HTTP `400 Bad Request` with the response text of a collection of objects keyed by "errors" (pretty printed here):
+
+    {
+      "errors": [
+        {
+          "code": "invalid_request",
+          "title": "API requires header \"Content-type application/vnd.api+json\" for exchanging data."
+        }
+      ]
+    }
 
 Code review, suggestions and pull requests very much welcome - thanks!
 
@@ -29,9 +38,12 @@ This middleware will throw a nested object in the application error like so:
 
       this.throw(400, {
         message: {
-          status: 400,
-          title: 'Bad Request',
-          detail: 'API requires header "Content-type application/vnd.api+json" for exchanging data.'
+          errors: [
+            {
+              code: 'invalid_request',
+              title: 'API requires header "Content-type application/vnd.api+json" for exchanging data.'
+            }
+          ]
         }
       });
 

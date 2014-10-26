@@ -1,6 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.0 - 2014-10-26
+
+### Added
+- Breaking change: http text response is now a collection of objects keyed by "errors"
+- Readme updates.
+- Dev dependency updates
+
+### Deprecated
+- Nothing.
+
+### Removed
+- Nothing.
+
+### Fixed
+- Nothing.
+
 ## 0.0.4 - 2014-09-14
 
 ### Added
