@@ -2,6 +2,7 @@
 
 var should = require('chai').should(),
   request = require('supertest'),
+  assert = require('chai').assert,
   koa = require('koa');
 
 var koaJsonApiHeaders = require('../lib/koa-jsonapi-headers'),
@@ -45,7 +46,19 @@ describe('JSON API Headers Middleware', function () {
             should.not.exist(err);
             return done(err);
           }
-          res.text.should.equal('{"status":400,"title":"Bad Request","detail":"API requires header \\"Content-type application/vnd.api+json\\" for exchanging data."}');
+
+          // Test: response is a collection of objects keyed by "errors"
+          res.text.should.match(/{"errors":\[{.*}/);
+
+          // Parse response test
+          var jsonResponse = JSON.parse(res.text);
+
+          should.exist(jsonResponse.errors);
+          assert.isArray(jsonResponse.errors, 'Top level response property should be an Array');
+
+          jsonResponse.errors[0].code.should.equal('invalid_request');
+          jsonResponse.errors[0].title.should.equal('API requires header "Content-type application/vnd.api+json" for exchanging data.');
+
           done();
         });
 
@@ -81,7 +94,19 @@ describe('JSON API Headers Middleware', function () {
             should.not.exist(err);
             return done(err);
           }
-          res.text.should.equal('{"status":400,"title":"Bad Request","detail":"API requires header \\"Accept application/vnd.api+json\\" for exchanging data."}');
+
+          // Test: response is a collection of objects keyed by "errors"
+          res.text.should.match(/{"errors":\[{.*}/);
+
+          // Parse response test
+          var jsonResponse = JSON.parse(res.text);
+
+          should.exist(jsonResponse.errors);
+          assert.isArray(jsonResponse.errors, 'Top level response property should be an Array');
+
+          jsonResponse.errors[0].code.should.equal('invalid_request');
+          jsonResponse.errors[0].title.should.equal('API requires header "Accept application/vnd.api+json" for exchanging data.');
+
           done();
         });
 
@@ -97,7 +122,7 @@ describe('JSON API Headers Middleware', function () {
 
       // default route
       app.use(function *route1(next) {
-        this.body = 'Corrent headers found';
+        this.body = 'Corret headers found';
         yield next;
       });
 
@@ -111,7 +136,7 @@ describe('JSON API Headers Middleware', function () {
             should.not.exist(err);
             return done(err);
           }
-          res.text.should.equal('Corrent headers found');
+          res.text.should.equal('Corret headers found');
           done();
         });
 
