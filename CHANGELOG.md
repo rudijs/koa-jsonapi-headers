@@ -1,6 +1,23 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 - 2014-11-06
+
+### Added
+- Validate accept header for all requests.
+- Validate content-type header for POST, PUT, PATCH only.
+- Readme updates.
+- Dev dependency updates.
+
+### Deprecated
+- Nothing.
+
+### Removed
+- Nothing.
+
+### Fixed
+- Nothing.
+
 ## 1.0.0 - 2014-10-26
 
 ### Added
