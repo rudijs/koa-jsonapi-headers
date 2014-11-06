@@ -9,11 +9,15 @@ KoaJS Validate JSON-API Request Headers Middleware
 
 ## Overview
 
-KoaJS middleware to validate required Request headers for [JSON API](http://jsonapi.org/format/) spec.
+KoaJS middleware to validate required HTTP request headers for [JSON API](http://jsonapi.org/format/) spec.
 
-    Content-type: application/vnd.api+json
+This middleware will validate *all* requests have this header set:
 
     Accept: application/vnd.api+json
+
+This middleware will validate POST, PUT and PATCH requests have this header set:
+
+    Content-type: application/vnd.api+json
 
 Validation failure will return HTTP `400 Bad Request` with the response text of a collection of objects keyed by "errors" (pretty printed here):
 
