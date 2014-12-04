@@ -1,6 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.1 - 2014-12-04
+
+### Added
+- Dependency updates.
+
+### Deprecated
+- Nothing.
+
+### Removed
+- Nothing.
+
+### Fixed
+- Nothing.
+
 ## 1.1.0 - 2014-11-06
 
 ### Added
