@@ -1,10 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 1.1.1 - 2014-12-04
+## 1.1.1 - 2015-03-03
 
 ### Added
 - Dependency updates.
+- Add iojs to package.json engines property
 
 ### Deprecated
 - Nothing.
